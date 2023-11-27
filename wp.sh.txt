@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Allan Peda <allan.peda@interpublic.com>
+# October 10, 2022
+
+set -eEuo pipefail
+
+declare -r SCRIPT=$(readlink -f "$0")
+declare -r SCRIPT_PATH=$(dirname "$SCRIPT")
+
+site_documentroot(){
+    for dr in '/data01/bind_mounts/www.interpublic.com' \
+             '/var/www/www.interpublic.com'
+    do
+        if [[ -f "$dr/index.php" ]]; then
+            echo "$dr"
+            return
+        fi
+    done
+    return 1
+} # site_documentroot()
+
+declare -r SITE_DOCUMENTROOT="$(site_documentroot)"
+{
+   cd "$SITE_DOCUMENTROOT"
+   declare WPUSER='www'
+   if [[ ${WP_HOSTNAME_URL+x} == 'x' ]]; then
+      WPUSER="$(whoami)"
+   fi
+   readonly WPUSER
+
+   if [[ $(id -u) -gt 0 ]]; then
+      if [[ "$(stat -c '%U' 'wp-content')" != "$WPUSER" ]]; then
+         echo "Owner check of wp-content failed, please investigate / correct."
+         exit 1
+      fi
+   fi
+
+   declare cmd='/ipg/local/bin/php'
+   if [[ "$(whoami)" != "$WPUSER" ]]
+   then
+      sudo PAGER='cat' -u $WPUSER ${SCRIPT_PATH}/php ${SCRIPT_PATH}/wp-cli.phar "$@"
+   else
+      PAGER='cat' ${SCRIPT_PATH}/php ${SCRIPT_PATH}/wp-cli.phar "$@"
+   fi
+}

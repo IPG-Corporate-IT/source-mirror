@@ -1,0 +1,13 @@
+pub   2048R/31CBD89E 2016-12-08
+      Key fingerprint = 5289 95BF EDFB A719 1D46  839E F9BA 0ADA 31CB D89E
+uid                  Joe Watkins <krakjoe@php.net>
+
+pub   rsa4096 2021-04-26 [SC] [expires: 2025-11-24]
+      39B6 4134 3D8C 104B 2B14  6DC3 F9C3 9DC0 B969 8544
+uid           [ultimate] Ben Ramsey <ramsey@php.net>
+sub   rsa4096 2021-04-26 [E] [expires: 2025-11-24]
+
+pub   rsa4096 2021-04-01 [SC]
+      F1F6 9223 8FBC 1666 E5A5  CCD4 199F 9DFE F6FF BAFD
+uid           [ultimate] Patrick Allaert <patrickallaert@php.net>
+sub   rsa4096 2021-04-01 [E]

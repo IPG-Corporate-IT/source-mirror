@@ -1,0 +1,16 @@
+pub   rsa4096 2021-04-01 [SC]
+      1198 C011 7593 497A 5EC5  C199 286A F1F9 8974 69DC
+uid           [ultimate] Pierrick Charron <pierrick@php.net>
+sub   rsa4096 2021-04-01 [E]
+
+pub   rsa4096 2021-04-26 [SC] [expires: 2025-11-24]
+      39B6 4134 3D8C 104B 2B14  6DC3 F9C3 9DC0 B969 8544
+uid           [ultimate] Ben Ramsey <ramsey@php.net>
+sub   rsa4096 2021-04-26 [E] [expires: 2025-11-24]
+
+pub   rsa4096 2021-03-26 [SC] [expires: 2030-03-26]
+      E609 13E4 DF20 9907 D8E3  0D96 659A 97C9 CF2A 795A
+uid           [ultimate] Sergey Panteleev <sergey@php.net>
+uid           [ultimate] Sergey Panteleev <sergey@s-panteleev.ru>
+uid           [ultimate] Sergey Panteleev <sergey@sergeypanteleev.com>
+sub   rsa4096 2021-03-26 [E] [expires: 2025-03-26]
