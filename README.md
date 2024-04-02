@@ -6,6 +6,8 @@ Files may be directly downloaded using a modified link:
 # illustrative example
 LINK='https://github.com/IPG-Corporate-IT/source-mirror/blob/main/apcu-5.1.21.tgz'
 curl -sLO  "https://raw.githubusercontent.com/IPG-Corporate-IT/source-mirror/main/${LINK##*/}"
+# other example, employing login
+curl -sL -u ${{ github.repository_owner }}:${{ secrets.GITHUB_TOKEN }} -o "${LINK##*/}"
 ```
 # Redis server source is suffixed with tar.gz
 # The redis*.tgz files are PHP Pecl
