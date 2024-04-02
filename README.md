@@ -26,6 +26,6 @@ Source1: https://archive.apache.org/dist/httpd/httpd-%{version}.tar.bz2.asc
 ```
 
 - The above entries are interpreted as follows:
-  - The `prep%` uses the sha256 checksum to confirm file integrity
-  - The `prep%` confirms the authenticity of the source file tarball using the publisher's well know public key and detached ASCII armored signature. The public key is fetched from the keyserver using the key server URL.
-  - Source0 is extracted per the ``
+  - The `%prep` uses the sha256 checksum to confirm file integrity
+  - The `%prep` confirms the authenticity of the source file tarball using the publisher's well know public key and detached ASCII armored signature. The public key is fetched from the keyserver using the key server URL.
+  - Source0 is extracted per the `Source0` and within the `%setup` macro.
