@@ -29,4 +29,4 @@ Source1: https://archive.apache.org/dist/httpd/httpd-%{version}.tar.bz2.asc
   - The `%prep` uses the sha256 checksum to confirm integrity of the file labelled as `Source0`
   - The `%{pubkeyurl}` macro is expnaded in the `%prep` section to retrive the authors public key.
   - The `%prep` section confirms the authenticity of the source file tarball using the public key retrieved above as well as the detached ASCII armored signature. The public key is fetched from the keyserver using the key server URL.
-  - Source0 is extracted per the `Source0` and within the `%setup` macro.
+  - The `%setup` macro exracts the file defined as `Source0` (if the above tests pass).
