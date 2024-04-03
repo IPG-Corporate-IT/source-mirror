@@ -1,7 +1,8 @@
 # source-mirror
-Files used for building binaries. Typically tar files, author signatures and checksums.
+This is a mirror of publicly available files used for building binaries. Here you will find tar files, author signatures and checksums.
 
-Files may be directly downloaded using a modified link:
+- There is no sensitive corporate information here.
+- Files may be directly downloaded using a variant of the link below:
 ```
 # illustrative example
 LINK='https://github.com/IPG-Corporate-IT/source-mirror/blob/main/apcu-5.1.21.tgz'
